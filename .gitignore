@@ -1,0 +1,38 @@
+# Raw Media & Copyrighted Audio-Visual Data (Never upload to Git)
+mmsd_raw_data/
+data/processed/audio_16k/
+*.mp4
+*.wav
+*.zip
+*.tar.gz
+*.7z
+
+# Large Binary Model Checkpoints
+data/features/*.npy
+data/features/*.pt
+data/features/*.pkl
+
+# Local Viva Prep Notes & Internal Working Audit Logs
+temp/
+PRACTICAL_AUDIT_REPORT.md
+FINAL_DELIVERABLE_AUDIT.md
+FINAL_CORRECTIONS_REPORT.md
+
+# Python Bytecode & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# Microsoft Office Temporary Lock Files & OS/Editor Clutter
+~$*
+.DS_Store
+__MACOSX/
+._*
+Thumbs.db
+.vscode/
+.idea/
+.env

@@ -1,0 +1,47 @@
+project:
+  name: "SarcasTone"
+  title: "A Leakage-Aware Comparative Study of Textual Semantics and Speech Prosody for Multimodal Sarcasm Detection"
+  seeds: [42, 1337, 2026]
+  primary_seed: 42
+  n_folds: 5
+  bootstrap_iterations: 5000
+  confidence_level: 0.95
+
+paths:
+  raw_video_dir: "mmsd_raw_data"
+  utterances_video_dir: "mmsd_raw_data/utterances_final"
+  context_video_dir: "mmsd_raw_data/context_final"
+  metadata_json: "data/metadata/sarcasm_data.json"
+  mustard_pp_csv: "data/metadata/mustard_plus_plus_text.csv"
+  master_dataset_parquet: "data/processed/mustard_master.parquet"
+  master_dataset_csv: "data/processed/mustard_master.csv"
+  audio_16k_dir: "data/processed/audio_16k"
+  splits_dir: "data/splits"
+  features_dir: "data/features"
+  results_dir: "results"
+  figures_dir: "results/figures"
+  tables_dir: "results/tables"
+  predictions_dir: "results/predictions"
+  experiment_registry: "experiments/experiment_registry.csv"
+
+audio:
+  sample_rate: 16000
+  channels: 1
+  f0_min_hz: 75.0
+  f0_max_hz: 500.0
+  silence_top_db: 28.0
+  short_clip_threshold_sec: 1.0
+
+text:
+  tfidf_max_features: 3000
+  tfidf_ngram_range: [1, 2]
+  transformer_checkpoint: "roberta-base"
+  sentiment_checkpoint: "cardiffnlp/twitter-roberta-base-sentiment-latest"
+
+speech_encoder:
+  wav2vec2_checkpoint: "facebook/wav2vec2-base"
+
+evaluation:
+  primary_metric: "macro_f1"
+  loso_min_utterances: 15
+

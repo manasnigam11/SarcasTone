@@ -1,0 +1,41 @@
+# Core Scientific & Data Processing Stack (Pinned Versions Verified in Environment)
+numpy==2.2.6
+pandas==2.3.1
+scipy==1.16.1
+scikit-learn==1.7.2
+xgboost==3.3.0
+pyarrow==25.0.0
+joblib==1.5.2
+
+# Deep Learning & Pretrained Encoders
+torch==2.11.0
+torchaudio==2.11.0
+transformers==5.4.0
+tokenizers==0.22.2
+safetensors==0.7.0
+huggingface_hub==1.8.0
+
+# Audio Decoding & Explicit Prosody Extraction
+av==19.0.2
+soundfile==0.14.0
+soxr==1.1.0
+librosa==1.0.0
+praat-parselmouth==0.4.7
+opensmile==2.6.0
+
+# Video Inspection & Visualization
+opencv-python==4.12.0.88
+matplotlib==3.10.5
+seaborn==0.13.2
+pillow==11.3.0
+
+# Automated Report & Paper Generation
+python-docx==1.2.0
+reportlab==4.5.0
+python-pptx==1.0.2
+PyYAML==6.0.3
+tqdm==4.67.1
+
+# Automated Testing
+pytest==9.1.1
+

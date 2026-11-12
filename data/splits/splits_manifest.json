@@ -1,0 +1,90 @@
+{
+  "total_instances": 690,
+  "unique_scene_clusters": 449,
+  "multi_clip_scene_clusters": 142,
+  "unique_speaker_groups": 23,
+  "seeds": [
+    42,
+    1337,
+    2026
+  ],
+  "n_folds": 5,
+  "loso_min_utterances": 15,
+  "eligible_loso_speakers": [
+    "FRIENDS_CHANDLER",
+    "BBT_SHELDON",
+    "BBT_HOWARD",
+    "GOLDENGIRLS_DOROTHY",
+    "FRIENDS_ROSS",
+    "FRIENDS_JOEY",
+    "FRIENDS_PHOEBE",
+    "BBT_LEONARD",
+    "BBT_PENNY",
+    "FRIENDS_RACHEL",
+    "FRIENDS_MONICA",
+    "BBT_RAJ",
+    "BBT_AMY"
+  ],
+  "loso_test_utterance_count": 614,
+  "random_split_leaked_scene_clusters": {
+    "seed_42": 116,
+    "seed_1337": 125,
+    "seed_2026": 123
+  },
+  "random_split_leaked_speaker_groups": {
+    "seed_42": 20,
+    "seed_1337": 20,
+    "seed_2026": 20
+  },
+  "verifications": [
+    {
+      "fold_col": "random_fold_s42",
+      "group_col": "utterance_id",
+      "num_folds": 5,
+      "num_unique_groups": 690,
+      "zero_overlap_verified": true
+    },
+    {
+      "fold_col": "random_fold_s1337",
+      "group_col": "utterance_id",
+      "num_folds": 5,
+      "num_unique_groups": 690,
+      "zero_overlap_verified": true
+    },
+    {
+      "fold_col": "random_fold_s2026",
+      "group_col": "utterance_id",
+      "num_folds": 5,
+      "num_unique_groups": 690,
+      "zero_overlap_verified": true
+    },
+    {
+      "fold_col": "scene_fold_s42",
+      "group_col": "scene_group_id",
+      "num_folds": 5,
+      "num_unique_groups": 449,
+      "zero_overlap_verified": true
+    },
+    {
+      "fold_col": "scene_fold_s1337",
+      "group_col": "scene_group_id",
+      "num_folds": 5,
+      "num_unique_groups": 449,
+      "zero_overlap_verified": true
+    },
+    {
+      "fold_col": "scene_fold_s2026",
+      "group_col": "scene_group_id",
+      "num_folds": 5,
+      "num_unique_groups": 449,
+      "zero_overlap_verified": true
+    },
+    {
+      "fold_col": "speaker_grouped_fold_s42",
+      "group_col": "speaker_group",
+      "num_folds": 5,
+      "num_unique_groups": 23,
+      "zero_overlap_verified": true
+    }
+  ]
+}
