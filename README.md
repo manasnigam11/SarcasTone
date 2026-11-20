@@ -1,8 +1,59 @@
-# SarcasTone
-
-**A Leakage-Aware Comparative Study of Textual Semantics and Speech Prosody for Multimodal Sarcasm Detection**
+# SarcasTone — A Leakage-Aware Comparative Study of Textual Semantics and Speech Prosody for Multimodal Sarcasm Detection
 
 **Official Repository:** [https://github.com/manasnigam11/SarcasTone](https://github.com/manasnigam11/SarcasTone)
+
+**Authors:** Manas Nigam (S24CSEU2391), Sri Charan Reddy (S24CSEU0563), Sanskar Gupta (S24CSEU0464), and Taanya Raawat (S24CSEU0587)
+
+**Institution:** School of Computer Science Engineering and Technology, Bennett University, Greater Noida, India  
+**Project Instructor:** Dr. Saurabh Kumar Srivastava
+
+---
+
+## Final Submission Deliverables (Direct Links)
+
+| Deliverable | Open in GitHub | Direct Download |
+| :--- | :--- | :--- |
+| **IEEE-style Research Paper (PDF)** | [SarcasTone_IEEE_Research_Paper.pdf](SarcasTone_IEEE_Research_Paper.pdf) | [Download PDF](https://github.com/manasnigam11/SarcasTone/raw/main/SarcasTone_IEEE_Research_Paper.pdf) |
+| **IEEE-style Research Paper (Word)** | [SarcasTone_IEEE_Research_Paper.docx](SarcasTone_IEEE_Research_Paper.docx) | [Download DOCX](https://github.com/manasnigam11/SarcasTone/raw/main/SarcasTone_IEEE_Research_Paper.docx) |
+| **Final Presentation (PowerPoint)** | [SarcasTone_Final_Presentation.pptx](SarcasTone_Final_Presentation.pptx) | [Download PPTX](https://github.com/manasnigam11/SarcasTone/raw/main/SarcasTone_Final_Presentation.pptx) |
+| **Source Code** | [`src/`](src/) · [`scripts/`](scripts/) · [`tests/`](tests/) | `git clone https://github.com/manasnigam11/SarcasTone.git` |
+
+All three deliverables sit directly in the repository root, next to this README.
+
+---
+
+## Project Description
+
+SarcasTone studies *spoken* sarcasm, where the intended meaning contradicts the literal words and is carried by vocal delivery. Using the **MUStARD** sitcom benchmark (690 audiovisual utterances, linked with 688 **MUStARD++** subgroup annotations), the project compares text semantics, interpretable speech prosody, and self-supervised audio representations under **leakage-controlled** evaluation: scene-grouped, speaker-grouped, and leave-one-speaker-out protocols, with diagnostic controls and paired bootstrap confidence intervals. The full study is written up in the research paper linked above.
+
+## Technology Stack
+
+- **Language / Environment:** Python 3.13
+- **Scientific stack:** NumPy, pandas, SciPy, scikit-learn, XGBoost, PyArrow, joblib
+- **Deep learning & pretrained encoders:** PyTorch, torchaudio, Hugging Face Transformers (`roberta-base`, `facebook/wav2vec2-base`, `cardiffnlp/twitter-roberta-base-sentiment-latest`)
+- **Audio & prosody extraction:** PyAV, librosa, Praat-Parselmouth, openSMILE (`eGeMAPSv02`), soundfile, soxr
+- **Visualization:** Matplotlib, seaborn, OpenCV, Pillow
+- **Paper & slide generation:** python-docx, ReportLab, python-pptx
+- **Testing:** pytest
+
+Exact pinned versions are listed in [`requirements.txt`](requirements.txt).
+
+## How to Access the Source Code
+
+```powershell
+git clone https://github.com/manasnigam11/SarcasTone.git
+cd SarcasTone
+python -m pip install -r requirements.txt
+python -m pytest tests/test_pipeline.py -v
+```
+
+- Core library code: [`src/`](src/) (data, splits, prosody, representations, models, evaluation, disagreement)
+- Reproduction pipeline scripts: [`scripts/`](scripts/)
+- Automated unit & leakage tests: [`tests/test_pipeline.py`](tests/test_pipeline.py)
+- Methodology, audits and results documentation: [`docs/`](docs/)
+- Step-by-step reproduction guide: [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md)
+
+Raw sitcom video/audio (`*.mp4`, `*.wav`) is intentionally not stored in Git (copyright); see *Dataset Download & Attribution Instructions* below.
 
 ---
 
@@ -25,6 +76,9 @@
 
 ```text
 main/
+├── SarcasTone_IEEE_Research_Paper.pdf         # Final IEEE-style Research Paper (PDF)
+├── SarcasTone_IEEE_Research_Paper.docx        # Final IEEE-style Research Paper (Word)
+├── SarcasTone_Final_Presentation.pptx         # Final Project Presentation Slides
 ├── configs/
 │   └── default.yaml                           # Central deterministic experiment configuration
 ├── data/
@@ -43,10 +97,7 @@ main/
 │   ├── METHODOLOGY.md                         # Complete technical methodology specification
 │   ├── EXPERIMENT_LOG.md                      # Detailed log of all executed experiments & gates
 │   ├── RESULTS_SUMMARY.md                     # Final technical report, tables & hypothesis verdicts
-│   ├── REPRODUCIBILITY.md                     # Reproduction instructions & team ownership matrix
-│   ├── SarcasTone_IEEE_Research_Paper.docx    # Final IEEE-style Research Paper (Word)
-│   ├── SarcasTone_IEEE_Research_Paper.pdf     # Final IEEE-style Research Paper (PDF)
-│   └── SarcasTone_Final_Presentation.pptx     # Final Project Presentation Slides
+│   └── REPRODUCIBILITY.md                     # Reproduction instructions & team ownership matrix
 ├── experiments/
 │   └── experiment_registry.csv                # Complete registry of all 150+ evaluated runs
 ├── results/

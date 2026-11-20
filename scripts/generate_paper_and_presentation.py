@@ -2,11 +2,11 @@
 Phase 16 & 17 Academic Research Paper (.docx & .pdf) and Final Presentation (.pptx) Generator.
 
 Generates:
-  1. `docs/SarcasTone_IEEE_Research_Paper.docx` — Complete 19-section IEEE-style conference paper
+  1. `SarcasTone_IEEE_Research_Paper.docx` — Complete 19-section IEEE-style conference paper
      with embedded real tables, publication figures, and verified references.
-  2. `docs/SarcasTone_IEEE_Research_Paper.pdf` — Typeset PDF version of the complete IEEE paper
+  2. `SarcasTone_IEEE_Research_Paper.pdf` — Typeset PDF version of the complete IEEE paper
      with embedded tables and publication figures.
-  3. `docs/SarcasTone_Final_Presentation.pptx` — 12-slide final presentation following the
+  3. `SarcasTone_Final_Presentation.pptx` — 12-slide final presentation following the
      Milestone 1 structure, updated with actual experimental implementations, figures, and results.
 """
 
@@ -60,7 +60,7 @@ def get_paper_sections() -> Tuple[str, str, str, List[Tuple[str, List[str], List
     title = "SarcasTone: A Leakage-Aware Comparative Study of Textual Semantics and Speech Prosody for Multimodal Sarcasm Detection"
     authors = (
         "Manas Nigam (S24CSEU2391), Sri Charan Reddy (S24CSEU0563), Sanskar Gupta (S24CSEU0464), "
-        "Taanya Raawat (S24CSEU0587), and Sriram (S24CSEU1654)"
+        "and Taanya Raawat (S24CSEU0587)"
     )
     affiliation = (
         "School of Computer Science Engineering and Technology, Bennett University, Greater Noida, India\n"
@@ -371,7 +371,7 @@ def get_paper_sections() -> Tuple[str, str, str, List[Tuple[str, List[str], List
 
 
 def build_word_paper(out_docx: Path) -> None:
-    """Generate the editable IEEE-style Word document (`docs/SarcasTone_IEEE_Research_Paper.docx`)."""
+    """Generate the editable IEEE-style Word document (`SarcasTone_IEEE_Research_Paper.docx`)."""
     title, authors, affiliation, sections = get_paper_sections()
     doc = Document()
 
@@ -455,7 +455,7 @@ def build_word_paper(out_docx: Path) -> None:
 
 
 def build_pdf_paper(out_pdf: Path) -> None:
-    """Generate the typeset IEEE-style PDF Research Paper (`docs/SarcasTone_IEEE_Research_Paper.pdf`)."""
+    """Generate the typeset IEEE-style PDF Research Paper (`SarcasTone_IEEE_Research_Paper.pdf`)."""
     title, authors, affiliation, sections = get_paper_sections()
     doc = SimpleDocTemplate(
         str(out_pdf),
@@ -580,7 +580,7 @@ def build_pdf_paper(out_pdf: Path) -> None:
 
 def build_final_presentation(out_pptx: Path) -> None:
     """
-    Generate the 12-slide Final Presentation (`docs/SarcasTone_Final_Presentation.pptx`)
+    Generate the 12-slide Final Presentation (`SarcasTone_Final_Presentation.pptx`)
     reusing the Milestone 1 structure and replacing planned placeholders with actual verified results.
     """
     prs = Presentation()
@@ -626,12 +626,11 @@ def build_final_presentation(out_pptx: Path) -> None:
         [
             "Core Research Question: Under scene-grouped and leave-one-speaker-out evaluation on MUStARD, which explicit prosodic cues add information beyond frozen text and learned audio representations, and does this change when text sentiment and vocal delivery disagree?",
             "Benchmark Dataset: 690 verified audiovisual clips from Original MUStARD (100% media intact) linked with N=688 MUStARD++ subgroup annotations (0 label discrepancies).",
-            "Project Team (5 Members):",
+            "Project Team (4 Members):",
             "  1. Manas Nigam (S24CSEU2391) — Data & Evaluation Lead",
             "  2. Sri Charan Reddy (S24CSEU0563) — Text Lead",
             "  3. Sanskar Gupta (S24CSEU0464) — Audio & Prosody Lead",
             "  4. Taanya Raawat (S24CSEU0587) — Fusion & Statistical Analysis Lead",
-            "  5. Sriram (S24CSEU1654) — Writing & Reproducibility Lead",
         ],
         font_size=14,
     )
@@ -797,9 +796,9 @@ def build_final_presentation(out_pptx: Path) -> None:
 
 
 def main() -> None:
-    build_word_paper(ROOT / "docs" / "SarcasTone_IEEE_Research_Paper.docx")
-    build_pdf_paper(ROOT / "docs" / "SarcasTone_IEEE_Research_Paper.pdf")
-    # Note: Do not overwrite user-customized docs/SarcasTone_Final_Presentation.pptx
+    build_word_paper(ROOT / "SarcasTone_IEEE_Research_Paper.docx")
+    build_pdf_paper(ROOT / "SarcasTone_IEEE_Research_Paper.pdf")
+    # Note: Do not overwrite user-customized SarcasTone_Final_Presentation.pptx (repository root)
 
 
 if __name__ == "__main__":

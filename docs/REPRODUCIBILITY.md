@@ -84,7 +84,6 @@ In accordance with Section 19 of the Master Directive and the Milestone 1 team r
 | **Member 2** | **Text Lead** | Sri Charan Reddy (`S24CSEU0563`) | `src/representations.py` (Text & Sentiment), `src/models.py` (TF-IDF, RoBERTa target & context models) | Member 1 (Data & Evaluation Lead) |
 | **Member 3** | **Audio Lead** | Sanskar Gupta (`S24CSEU0464`) | `src/prosody.py` (4-Group Explicit Prosody, missing-$F_0$ flags, eGeMAPSv02), `src/representations.py` (`wav2vec 2.0`) | Member 2 (Text Lead) |
 | **Member 4** | **Fusion & Analysis Lead** | Taanya Raawat (`S24CSEU0587`) | `src/models.py` (Early/Late/Trimodal Fusion, Shuffled & Speaker Controls, Ablations), `src/disagreement.py`, `scripts/run_phase7_to_11_experiments.py` | Member 3 (Audio Lead) |
-| **Member 5** | **Writing & Project Lead** | Sriram (`S24CSEU1654`) | `README.md`, `docs/*`, `scripts/run_phase13_visualizations.py`, `scripts/generate_paper_and_presentation.py`, IEEE Paper (`.docx`/`.pdf`), Final Presentation (`.pptx`) | All Members (Full Gate 4 & Gate 5 Sign-Off) |
 
 ---
 
